@@ -1,4 +1,6 @@
-﻿using System;
+﻿// ARSTConfig ver 4.0
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -64,6 +66,7 @@ namespace ARSTConfig
                 if (cfgPath == "") cfgPath = path;
                 if (data != "")
                 {
+                    string res = read(cfgPath, cfgName);
                     string[] content = File.ReadAllLines(cfgPath, Encoding.UTF8);
 
                     for (int i = 0; i < content.Length; i++)
@@ -71,7 +74,7 @@ namespace ARSTConfig
                         string target = content[i];
                         if (target.Contains(cfgName + "="))
                         {
-                            content[i] = target.Split('=')[0] + "=" + data;
+                            content[i] = target.Replace(cfgName + "=", "") + data;
                             break;
                         }
                     }
