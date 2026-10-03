@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
-namespace ARSTLog
+namespace ARSTLib
 {
     internal class ARSTLogAPI
     {
