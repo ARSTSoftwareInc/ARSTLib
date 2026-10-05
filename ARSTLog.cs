@@ -72,7 +72,7 @@ namespace ARSTLib
 
         public void addToLog(string text, bool showDate = true)
         {
-            if (showDate) text = $"[{appIndentifier}] -str:{counter}- [{DateTime.Now.ToString()}] " + text;
+            if (showDate) text = $"-str:{counter}- [{DateTime.Now.ToString()}] " + text;
             log.Append($"{text}\n");
             Console.WriteLine($"[{appIndentifier}] {text}");
 
@@ -87,6 +87,7 @@ namespace ARSTLib
                 counter = 0;
                 log.Clear();
                 log.Append($"[{appIndentifier}] -str:{counter}- [{DateTime.Now.ToString()}] log automaticaly cleared!\n\n");
+                Console.WriteLine($"[{appIndentifier}] [{DateTime.Now.ToString()}] ARSTLog --- addToLog:: log automaticaly cleared!");               
                 saveLog();
             }
             else counter++;
